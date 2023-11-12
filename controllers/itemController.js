@@ -19,7 +19,11 @@ exports.index = asyncHandler(async (req, res, next) => {
 });
 
 exports.item_list = asyncHandler(async (req, res, next) => {
-  res.send("item list not implemented yet");
+  const items = await Item.find({}).exec();
+  res.render("items", {
+    title: "All Item List",
+    items: items,
+  })
 });
 
 exports.item_detail = asyncHandler(async (req, res, next) => {
