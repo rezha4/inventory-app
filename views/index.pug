@@ -3,13 +3,7 @@ extends layout
 block content
   h1= title
   p Welcome to #{title}
-  h1 Trying out
-  h1 Pug - node template engine
-    #container.col
-      if youAreUsingPug
-        p You are amazing
-      else
-        p Get on it!
-      p.
-        Pug is a terse and simple templating language with a
-        strong focus on performance and powerful features.
+  
+  ul
+    li !{item_count}
+    li !{category_count}
