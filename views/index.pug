@@ -2,8 +2,8 @@ extends layout
 
 block content
   h1= title
-  p Welcome to #{title}
+  p Welcome to #{title}, current record counts:
   
   ul
-    li !{item_count}
-    li !{category_count}
+    li #[strong Item count:] !{item_count}
+    li #[strong Category count:] !{category_count}

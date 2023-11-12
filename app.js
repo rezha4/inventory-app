@@ -10,6 +10,18 @@ const catalogRouter = require("./routes/catalog");
 
 var app = express();
 
+const mongoose = require("mongoose");
+mongoose.set("strictQuery", false);
+
+require("dotenv").config();
+
+const mongoDB = process.env.SECRET_KEY || process.env.MONGODB_URI;
+
+main().catch((err) => console.log(err));
+async function main() {
+  await mongoose.connect(mongoDB);
+}
+
 // view engine setup
 app.set("views", path.join(__dirname, "views"));
 app.set("view engine", "pug");
