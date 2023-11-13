@@ -3,7 +3,6 @@ const asyncHandler = require("express-async-handler");
 
 exports.category_list = asyncHandler(async (req, res, next) => {
   const categories = await Category.find({}).exec();
-  console.log(categories);
   res.render("categories", {
     title: "Categories",
     categories: categories,
@@ -11,5 +10,8 @@ exports.category_list = asyncHandler(async (req, res, next) => {
 });
 
 exports.category_detail = asyncHandler(async (req, res, next) => {
-  res.send("category detail not yet implemented");
+  const categories = await Category.findById(req.params.id).exec();
+  res.render("category_detail", {
+    categories: categories,
+  })
 });
