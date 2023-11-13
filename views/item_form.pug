@@ -1,0 +1,18 @@
+extends layout 
+
+block content 
+    h1=title 
+    form(method="POST" action="")
+        label(for="name") Name:
+        input(type="text", placeholder="Item name" name="name" required="true")
+        label(for="description") Description: 
+        input(type="text", placeholder="Description" name="description" required="true")
+        label(for="description") Category: 
+        select(type="select", placeholder="Select Category" name="category" required="true")
+            for cat in category 
+                option(value=cat._id selected=(cat._id.toString()===cat._id.toString() ? "selected" : false)) #{cat.name}
+        label(for="price") Price: 
+        input(type="number", name="price" required="true")
+        label(for="stock") Stock: 
+        input(type="number", name="stock" required="true")
+        button(type="submit") Submit
