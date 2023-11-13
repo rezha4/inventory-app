@@ -1,7 +1,7 @@
 extends layout 
 
 block content 
-    h1= title 
+    h1=title 
 
     ul 
         each item in items 
@@ -10,7 +10,8 @@ block content
                 p Description: !{item.description}
                 p Price: !{item.price}
                 p Stock: !{item.stock}
-                a(href=item.category) !{item.category}
+                a(href=item.url) #{item.category.name}
+
                 br
         else 
             li There are no items.
