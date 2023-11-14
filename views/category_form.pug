@@ -1,0 +1,9 @@
+extends layout 
+
+block content 
+    form(method="POST" action="")
+    label(for="name") Category Name: 
+    input(type="text", name="name" required="true")
+    label(for="description") Description: 
+    input(type="text", name="description" required="true")
+    button(type="submit") Submit
